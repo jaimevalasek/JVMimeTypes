@@ -4,7 +4,7 @@ Create By: Jaime Marcelo Valasek
 
 Use this module to validate the file upload using mime-types or extensions.
 
-Futures video lessons can be developed and published on the website or Youtube channel http://www.zf2.com.br/tutoriais http://www.youtube.com/zf2tutoriais
+Futures video lessons can be developed and published on the website or Youtube channel http://www.zf2.com.br/tutoriais - http://www.youtube.com/zf2tutoriais
 
 Installation
 -----
@@ -17,17 +17,43 @@ Using the JVMimeTypes
 -----
 Instantiating the class module JVMimeTypes
 ```php
+use JVMimeTypes\Service\MimeTypes;
+
 $serviceMimeTypes = new MimeTypes($this->getServiceLocator()->get('servicemanager'));
 ```
 
 ```php
 /*
- * Listing the mime types with extensions as an index - custom
+ * Listing the mime types with extensions as an index - custom in `config/module.config.php`
  * Passing false as the second parameter returns the numerical indices
  */
+
+// This code below examples are the profiles that are within the configuration file `config/module.config.php`
+'mime_types_custom' => array(
+    'ext-images-thumb' => array(
+        'jpg', 'jpeg', 'png', 'gif'
+    ),
+    'ext-images-min' => array(
+        'jpg', 'jpeg', 'png', 'gif', 'bmp', 'tif'
+    ),
+    'ext-audio-min' => array(
+        'mp3', 'wma'
+    ),
+    'ext-video-min' => array(
+        'mp4', 'flv', 'avi', 'wmv'
+    ),
+    'ext-application-min' => array(
+        'exe'
+    ),
+    'ext-ms-oficce' => array(
+        'xls', 'doc', 'ppt', 'docx', 'xlsx'
+    ),
+)
+
+// Executing of the method
 exit(print_r($serviceMimeTypes->getMimeTypeCustom(array('ext-audio-min'))));
 
-// result
+// Result
 Array
 (
     [mp3] => video/x-mpeg
