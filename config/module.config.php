@@ -1,11 +1,12 @@
 <?php
 
 return array(
+    // perfil de extensões e mime types
     'mime_types_custom' => array(
-        'ext-images-thumb' => array(
+        'ext-image-thumb' => array(
             'jpg', 'jpeg', 'png', 'gif'
         ),
-        'ext-images-min' => array(
+        'ext-image-min' => array(
             'jpg', 'jpeg', 'png', 'gif', 'bmp', 'tif'
         ),
         'ext-audio-min' => array(
