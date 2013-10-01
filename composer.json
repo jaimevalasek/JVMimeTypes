@@ -4,7 +4,7 @@
     "license": "BSD-3-Clause",
     "type": "library",
     "keywords": [
-        "zf2"
+        "zf2", "mime-types", "jaimevalasek"
     ],
     "homepage": "https://github.com/jaimevalasek/JVMimeTypes",
     "authors": [
